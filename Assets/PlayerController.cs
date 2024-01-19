@@ -45,4 +45,14 @@ public class PlayerController : MonoBehaviour
 
         playerBody.AddForce(movement * Time.deltaTime * speed);
     }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (health == 0)
+        {
+            Debug.Log("Game Over!");
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
+    }
 }
